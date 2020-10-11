@@ -100,7 +100,7 @@ for filepath in folder.glob("*.csv"):
         results.append([date, actual_pl, var, es])
      
     results = pd.DataFrame(results, columns=["Date", "PL", "VaR", "ES"])
-    results["Exception_VaR"] = results["PL"] < results["VaR"]
+    results["Exception_VaR"] = results["PL"] < results["VaR"] 
     results["Exception_ES"] = results["PL"] < results["ES"]
     results.to_csv(folder / "backtesting_results" / filepath.name, index = False)
                                              
